@@ -1,0 +1,20 @@
+package com.ezen.myProject.domain;
+
+public class PagingVO {
+	private int pageNo;  // 현재 페이지네이션 번호
+	private int qty;  // 한 페이지당 게시글 수
+	
+	public PagingVO() {
+		this(1,20);
+	}
+	
+	public PagingVO(int pageNo, int qty) {
+		this.pageNo = pageNo;
+		this.qty = qty;
+	}
+	
+	// 해당 페이지에 나타낼 첫 게시글의 번호
+	public int getPageStart() {
+		return (this.pageNo - 1) * qty;
+	}
+}

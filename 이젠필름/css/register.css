@@ -1,0 +1,158 @@
+body{
+  background-image: url(../images/회원가입그림1.png);
+  background-size: cover;
+  height: 100vh;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper input{
+  border-radius: 3px;
+  line-height: 35px;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #181313;
+}
+
+.wrapper {
+  padding: 10px;
+  width: 600px;
+  margin: auto;
+  padding: 30px;
+  background-color: #181313ef;
+}
+.wrapper .auth, .wrapper .timer, .wrapper .signUp{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+
+}
+.wrapper button{
+  cursor: pointer;
+  height: 30px;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+  color: #f2f2f2;
+  margin-bottom: 20px;
+}
+
+.email input {
+  width: 100%;
+}
+
+.name input {
+  width: 100%;
+}
+
+.password input {
+  width: 100%;
+}
+
+.passwordCheck input {
+  width: 100%;
+}
+
+.phone {
+  display: flex;
+  justify-content: space-between;
+  line-height: 35px;
+}
+
+#phone1 {
+  width: 18%;
+}
+
+#phone2 {
+  width: 30%;
+}
+
+#phone3 {
+  width: 30%;
+}
+
+.auth {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.auth div {
+  width: 30%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  color: #f2f2f2;
+}
+
+.auth button {
+  width: 70%;
+}
+
+.timer div {
+  width: 30%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  color: #f2f2f2;
+}
+
+.timer button {
+  width: 70%;
+}
+
+
+.area select {
+  width: 100%;
+  height: 40px;
+}
+
+.gender {
+  text-align: center;
+}
+
+.sendMessage{
+  cursor:pointer;
+  color: #f2f2f2;
+  background-color: #6c6a6a;
+  border: 2px;
+  border-color: -internal-light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
+}
+
+.completion{
+  cursor:pointer;
+  color: #f2f2f2;
+  background-color: #6c6a6a;
+  border: 2px;
+  border-color: -internal-light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
+}
+
+.signUp button {
+  width: 100%;
+  cursor:pointer;
+  color: #f2f2f2;
+  background-color: #6c6a6a;
+  border: 2px;
+  border-color: -internal-light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
+}
+
+
+
+.error{
+  font-size: 1px;
+  height: 20px;
+  color:red;
+  font-weight: 700;
+}

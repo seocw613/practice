@@ -1,0 +1,112 @@
+:root{
+--color1: #181313;
+--color2: #391A1A;
+--color3: #621313;
+--white: #F2F2F2;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 55px;
+    background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.7)), url(../images/극장.jpg);
+    background-size: cover;
+}
+#container table {
+    text-align: center;
+    margin: auto;
+    width: 500px;
+}
+#container fieldset{
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+}
+#container fieldset legend{
+    color: var(--color1);
+}
+#container input {           
+    color: #181313;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px
+}
+th, td{
+    border: 0;
+    vertical-align: middle;
+}
+
+/* 개인정보 변경 */
+#userInfo{}
+#userInfo h3{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+#userInfo form#myForm{}
+#userInfo form#myForm table{
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border: 0;
+}
+/* 개인정보 변경의 소제목들 */
+#userInfo form#myForm table th{
+    padding: 10px 0;
+    padding-right: 10px;
+    transform: translateX()
+}
+#userInfo form#myForm table .change{
+    /* margin-top: 10px; */
+    height: 29px;
+    line-height: 29px;
+    padding: 0 8px;
+    background-color: var(--color2);
+    color: var(--white);
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+#userInfo form#myForm table .change:hover{
+    background-color: var(--color3);
+}
+
+
+/* 비밀번호 변경 */
+#userPw{}
+#userPw #pw {
+    margin-top: 20px;
+}
+#userPw #pw h3{}
+#userPw form#pwForm{}
+#userPw form#pwForm fieldset{
+    background: rgba(0, 0, 0, 0.3);
+    padding-bottom: 10px;
+    border: 0;
+}
+#userPw form#pwForm fieldset legend{
+    color: var(--color1);
+    padding: 0 10px;
+}
+#userPw form#pwForm fieldset input{
+    margin: 5px 0;
+}
+#userPw form#pwForm fieldset #pw_change{
+    margin-top: 10px;
+    padding: 7px 10px;
+    background-color: var(--color2);
+    color: var(--white);
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;           
+    transition: all 0.3s linear;
+}
+#userPw form#pwForm fieldset #pw_change:hover {
+    background-color: var(--color3);
+}

@@ -1,0 +1,42 @@
+:root{
+    --color1: #181313;
+    --color2: #391A1A;
+    --color3: #621313;
+    --white: #F2F2F2;
+}
+
+#footer{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 70px;
+    width: 100%;
+    bottom: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: #181313ef;
+}
+#footer .footer-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 10px;
+    width: 1200px;
+    margin: 0 auto;
+}
+#footer .icon-wrapper{
+    width: 20%;
+    text-align: right;
+}
+.icon-wrapper ion-icon{
+    margin-right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+.icon-wrapper ion-icon:hover{
+    color: var(--color3);
+}
+#footer .copy-text{
+    width: 80%;
+}
+.copy-text-block{
+    font-size: 14px;
+}

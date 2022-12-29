@@ -1,0 +1,34 @@
+package com.ezen.myProject.domain;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class PagingVO {
+	private int pageNo;  // 현재 페이지네이션 번호
+	private int qty;  // 한 페이지당 게시글 수
+	
+	// 검색을 위한 변수
+	private String type;  // 제목, 내용 등 찾을 범위
+	private String keyword;  // 검색어
+	
+	public PagingVO() {
+		this(1,20);
+	}
+	
+	public PagingVO(int pageNo, int qty) {
+		this.pageNo = pageNo;
+		this.qty = qty;
+	}
+	
+	// 해당 페이지에 나타낼 첫 게시글의 번호
+	public int getPageStart() {
+		return (this.pageNo - 1) * qty;
+	}
+	
+	public String[] getTypeToArray() {
+		
+		return this.type == null? new String[] {} : this.type.split("");
+	}
+}

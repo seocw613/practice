@@ -1,0 +1,6 @@
+package com.ezen.myProject.domain;
+
+public class BoardDTO {
+	private BoardVO bvo;
+	private List<FileVO> fList;
+}

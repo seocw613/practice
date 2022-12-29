@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+    
+    <!-- 모든 페이지가 사용하는 css파일들 -->
+    <link rel="stylesheet" href="css/initial.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="main">
+        <div class="wrapper">
+            <div class="title"><h1 style="font-size: 21px;">회원가입</h1></div>
+                <div class="email">
+                    <input id="email" type="text" placeholder="이메일을 입력해 주세요.">
+                    <div id="emailError" class="error"></div>
+                </div>
+                <div class="name">
+                    <input id="name"  type="text" placeholder="이름을 입력해 주세요.">
+                    <div id="nameError" class="error"></div>
+                </div>
+                <div class="password">
+                    <input id="password" type="password" placeholder="비밀번호를 입력해 주세요.">
+                    <div id="passwordError" class="error"></div>
+                </div>
+                <div class="passwordCheck">
+                    <input id="passwordCheck" type="password" placeholder="비밀번호를 다시 입력해 주세요.">
+                    <div id="passwordCheckError" class="error"></div>
+                </div>
+                <div class="phone">
+                    <input id="phone1" type="text" size="1" maxlength="3" oninput="changePhone1()"> -
+                    <input id="phone2" type="text" size="3" maxlength="4" oninput="changePhone2()"> -
+                    <input id="phone3" type="text" size="3" maxlength="4" oninput="changePhone3()">
+                </div>
+                <div class="auth">
+                <div id="certificationNumber">000000</div>
+                <button disabled id="sendMessage" class="sendMessage" onclick="getToken()">인증번호 전송</button>
+                </div>
+                <div class="timer">
+                <div id="timeLimit">03:00</div>
+                <button disabled id="completion" class="completion" onclick="checkCompletion()">인증확인</button>
+                </div>
+                <div class="signUp">
+                <button id="signUpButton" onclick="signUpCheck()">가입하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모든 페이지가 사용하는 script 파일들 -->
+    <script src="js/side_navigation.js"></script>
+    <script src="js/11login.js"></script>
+    <script src="js/search_box.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- DAO를 구현하지 않고 DAO 인터페이스에서 지시하는 메서드명을 Mapper의 id명으로 바로 사용할 예정 -->
+<mapper namespace="com.ezen.myProject.repository.CommentDAO">
+
+</mapper>

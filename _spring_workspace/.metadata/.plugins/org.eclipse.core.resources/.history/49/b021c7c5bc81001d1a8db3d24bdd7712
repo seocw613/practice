@@ -1,0 +1,8 @@
+package com.ezen.myProject.handler;
+
+public class PagingHandler {
+	private int startPage;  // 현재 페이지에서 나타낼 첫 페이지네이션 번호
+	private int endPage;  // 현재 페이지에서 나타낼 끝 페이지네이션 번호
+	private int pagenationQty;  // 현재 페이지에서 나타낼 페이지네이션 개수
+	private boolean prev, next;  // 이전, 다음 페이지네이션 번호
+}

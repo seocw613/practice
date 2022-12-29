@@ -1,0 +1,9 @@
+package com.ezen.myProject.domain;
+
+public class CommentVO {
+	private int cno;
+	private int bno;
+	private String writer;
+	private String reg_at;
+	private String mod_at;
+}

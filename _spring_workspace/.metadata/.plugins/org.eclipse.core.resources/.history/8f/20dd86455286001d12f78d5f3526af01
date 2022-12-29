@@ -1,0 +1,70 @@
+package com.ezen.myProject.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import com.ezen.myProject.domain.BoardDTO;
+import com.ezen.myProject.domain.BoardVO;
+import com.ezen.myProject.domain.PagingVO;
+import com.ezen.myProject.domain.UserVO;
+import com.ezen.myProject.repository.BoardDAO;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class BoardServiceImpl implements BoardService {
+	
+	@Inject
+	private BoardDAO bdao;
+
+	@Override
+	public int register(BoardDTO bvo) {
+		log.info("board register check 2");
+		return bdao.insertBoard(bvo);
+	}
+
+	@Override
+	public List<BoardVO> getList(PagingVO pgvo) {
+		log.info("board list check 2");
+		return bdao.selectBoardList(pgvo);
+	}
+
+	@Override
+	public BoardVO getDetail(int bno) {
+		log.info("board detail check 2");
+		BoardVO bvo = bdao.selectDetail(bno);
+		if(bvo == null) log.info("detail error");
+		if(bvo != null) {
+			bvo.setRead_count(bvo.getRead_count()+1);
+			bdao.updateRead(bvo);
+		}
+		return bvo;
+	}
+
+	@Override
+	public int modify(BoardVO bvo, UserVO user) {
+		log.info("board modify check 2");
+		BoardVO tmpBoard = bdao.selectDetail(bvo.getBno());
+		if(user == null || !user.getId().equals(tmpBoard.getWriter())) {
+			return 0;
+		}
+		return bdao.updateBoard(bvo);
+	}
+
+	@Override
+	public int remove(int bno) {
+		log.info("board remove check 2");
+		return bdao.updateBoardDel(bno);
+	}
+
+	@Override
+	public int getBoardCount(PagingVO pgvo) {
+		log.info("board count check 2");
+		return bdao.selectBoardCount(pgvo);
+	}
+
+}

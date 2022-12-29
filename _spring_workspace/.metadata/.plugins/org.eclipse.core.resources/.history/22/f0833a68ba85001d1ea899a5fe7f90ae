@@ -1,0 +1,60 @@
+package com.ezen.myProject.handler;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+import org.joda.time.LocalDate;
+import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.ezen.myProject.domain.FileVO;
+
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Component
+@AllArgsConstructor
+public class FileHandler {
+	private final String UP_DIR = "D:\\_javaweb\\_java\\fileUpload";
+	
+	public List<FileVO> uploadFiles(MultipartFile[] files){
+		LocalDate date = LocalDate.now();
+		log.info("date : "+date);
+		String today = date.toString();  // 2022-12-27
+		// 대시(-)를 파일 구분자로 변경
+		today = today.replace("-", File.separator);
+		
+		File folders = new File(UP_DIR, today);
+		
+		// 폴더가 없으면 생성, 있으면 생성x
+		if(!folders.exists()) {
+			folders.mkdirs(); // 생성
+		}
+		
+		// 파일 경로설정 환료
+		List<FileVO> fList = new ArrayList<FileVO>();
+		for(MultipartFile file : files) {
+			FileVO fvo = new FileVO();
+			fvo.setSasve_dir(today);  // 파일 경로 설정
+			fvo.setFile_size(file.getSize());  // 파일 용량 설정
+			
+			String originalFileName = file.getOriginalFilename();  // 경로를 포함할 수도 있는 파일명
+			log.info("original fileName : "+originalFileName);
+			String onlyFileName = originalFileName.substring(originalFileName.lastIndexOf("\\")+1);  // 경로를 제외한 파일명
+			log.info("only fileName : "+originalFileName);
+			
+			fvo.setFile_name(onlyFileName);  // 파일 이름 설정
+			
+			UUID uuid = UUID.randomUUID();
+			fvo.setUuid(uuid.toString());  // uuid 설정
+			
+			// 디스크에 저장할 파일 객체 생성
+			String fullFileName = uuid.toString()+"_"+onlyFileName;
+		}
+		
+		return fList;
+	}
+}

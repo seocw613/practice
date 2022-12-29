@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezen.myProject.repository.UserDAO">
+	<select id="getUser" parameterType="String" resultType="com.ezen.myProject.domain.UserVO">
+		select * from user where id = #{id}
+	</select>
+	<!-- parameterType은 안 적어도 자동으로 입력되긴 한다. -->
+	<insert id="insertUser" parameterType="com.ezen.myProject.domain.UserVO">
+		insert into user (id, pw, name, age, email, home) values(#{id},#{pw},#{name},#{age},#{email},#{home})
+	</insert>
+</mapper>

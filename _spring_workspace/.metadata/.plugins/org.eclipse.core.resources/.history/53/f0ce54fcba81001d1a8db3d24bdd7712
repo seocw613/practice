@@ -1,0 +1,6 @@
+package com.ezen.myProject.domain;
+
+public class PagingVO {
+	private int pageNo;  // 현재 페이지
+	private int qty;
+}

@@ -1,0 +1,199 @@
+<!-- 영화 상세 페이지 -->
+<!DOCTYPE html>
+<head>
+    <title>이터널 선샤인</title>
+    
+    <!-- 모든 페이지가 사용하는 css파일들 -->
+    <link rel="stylesheet" href="css/initial.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/side_navigation.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/11login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/movie.css">
+</head>
+<body>
+    <!-- header, side_navigation, to_top_btn, footer -->
+    <div id="header">
+        <div id="header_container">
+            <div class="left">
+                <div id="menu_btn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div id="header_logo">
+                    <a href="main.html"><span class="material-symbols-outlined">movie</span></a>
+                </div>
+            </div>
+            <div id="search_box_btn">
+                <ion-icon name="search-outline"></ion-icon>
+            </div>
+            <div id="search_box">
+                <form action="">
+                    <input type="text">
+                    <button type="submit"><ion-icon name="search-outline"></ion-icon></button>
+                </form>
+            </div>
+            <div class="right">
+                <div id="login_btn2" class="right_btn">로그인</div>
+                <div class="loginmodal">
+                    <a href="./userPage.html" id="login_btn" class="right_btn">내정보</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="side_navigation">
+        <div><a href=""><ion-icon name="star-outline"></ion-icon><span class="category_title">인기 영화</span></a></div>
+        <div class="category">
+            <div>
+                <ion-icon name="videocam-outline"></ion-icon>
+                <span class="category_title">장르</span>
+                <div class="toggle_btn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <ul>
+                <li><a href="">액션</a></li>
+                <li><a href="">애니메이션</a></li>
+                <li><a href="">코미디</a></li>
+                <li><a href="">범죄</a></li>
+                <li><a href="">판타지</a></li>
+                <li><a href="">드라마</a></li>
+                <li><a href="">느와르</a></li>
+                <li><a href="">역사</a></li>
+                <li><a href="">공포</a></li>
+                <li><a href="">로맨스</a></li>
+                <li><a href="">공상과학</a></li>
+                <li><a href="">스포츠</a></li>
+            </ul>
+        </div>
+        <div><a href=""><ion-icon name="help-circle-outline"></ion-icon><span class="category_title">고객 센터</span></a></div>
+        <div><a href=""><ion-icon name="settings-outline"></ion-icon><span class="category_title">설정</span></a></div>
+    </div>
+    
+    <div id="to_top_btn"><ion-icon name="caret-up-circle-outline"></ion-icon></div>
+
+    <div id="container">
+        <div id="streaming">영화 스트리밍 공간</div>
+        <div id="content1">
+            <div class="left">
+                <div id="movie_title">이터널 선샤인</div>
+                <div id="movie_description">
+                    <ul>
+                        <li>개봉년도 : 2004</li>
+                        <li>재생시간 : 108분</li>
+                        <li>평점 : 10.0</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><ion-icon name="heart-outline"></ion-icon><span>좋아요</span></li>
+                    <li><ion-icon name="share-social-outline"></ion-icon><span>공유</span></li>
+                    <li><ion-icon name="alert-circle-outline"></ion-icon><span>신고</span></li>
+                </ul>
+            </div>
+        </div>
+        <div id="content2">
+            <div id="content_title">줄거리</div>
+            <div id="content_description">조엘은 아픈 기억만을 지워준다는 라쿠나사를 찾아가 헤어진 연인 클레멘타인의 기억을 지우기로 결심한다. 기억이 사라져 갈수록 조엘은 사랑이 시작되던 순간, 행복한 기억들, 가슴 속에 각인된 추억들을 지우기 싫어지기만 하는데... 당신을 지우면 이 아픔도 사라질까요? 사랑은 그렇게 다시 기억된다.</div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="footer-container">
+            <div class="copy-text">
+                <div class="copy-text-block">이젠필름 주식회사 | 고객센터 1599-0000 (평일 09:00~18:00 / 점심시간 12:00~13:00 / 주말 및 공휴일 휴무)</div>
+                <div class="copy-text-block">사업자등록번호 : 123-00-45678</div>
+                <div class="copy-text-block">인천 남동구 인주대로 000</div>
+                <div class="copy-text-block"></div>
+            </div>
+            <div class="icon-wrapper">
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-icon name="logo-instagram"></ion-icon>
+                <ion-icon name="logo-twitter"></ion-icon>
+                <ion-icon name="logo-youtube"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <!-- login -->
+    <div class="loginmodal2">
+        <div id="login_bg"></div>
+        <div class ="login_container" name="전체창">
+            <div class="containerTopLeft innercontainer" name="로고,신작광고판">
+                <div class="mainPoster" name="신작영화 포스터">
+                    <video autoplay="" muted="" class="videos1">
+                        <source src="https://adimg.cgv.co.kr/images/202211/Ditto/1107_mo_1080x608.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+    
+            <div class="containerTopRight innercontainer" name="로그인창">
+                <div class="middlecontainer">
+                    <div class="idpwbox" name="아이디/비번">
+                        <input type="text" class="loginElement" name="아이디 입력">
+                        <input type="text" class="loginElement" name="비밀번호 입력">
+                    </div>
+                    <div class="loginbuttonbox" name="로그인버튼">
+                        <button class="loginbutton" name="로그인버튼">로그인</button>
+                    </div>
+                    <div class="textbox">
+                        <div class="idpwfinandbox" name="아이디/비번 찾기">
+                            <a href="" class="idpw">아이디 찾기</a>
+                            <a href="" class="idpw">비밀번호 찾기</a>
+                        </div>
+                        <div class="userRegisterBox" name="회원가입">
+                            <a href="register.html" class="userRegister">회원이 아니신가요? 회원가입 하기</a>
+                        </div>
+                    </div>
+                    <div class="idpwbox" name="구글/네이버/카카오 로그인">
+                        <button class="loginElement" name="구글로그인" onclick="">
+                            <div class="logoimgbox">
+                                <img src="images/googlelogo.png" alt="아잉">
+                            </div>
+                            <div class="logotextbox">
+                                <a class="loginElement" href="https://accounts.google.com/v3/signin/identifier?dsh=S-2112969890%3A1668391349666707&authuser=0&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Fhl%3Dko&ec=GAlAwAE&hl=ko&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession">구글 로그인</a>
+                            </div>
+                        </button>
+
+                        <button class="loginElement" name="네이버로그인" onclick="naverbut()">
+                            <div class="logoimgbox">
+                                <img src="images/naverlogo.png" alt="아잉">
+                            </div>
+                            <div class="logotextbox">
+                                <a class="loginElement" href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com">네이버 로그인</a>
+                            </div>
+                        </button>
+
+                        <button class="loginElement" name="카카오로그인"
+                        onclick="kakaobut()">
+                            <div class="logoimgbox">
+                                <img src="images/kakaologo.PNG" alt="아잉">
+                            </div>
+                            <div class="logotextbox">
+                                <a class="loginElement" href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fproxy%3DeasyXDM_Kakao_teqo1xgujcl_provider%26ka%3Dsdk%252F1.43.0%2520os%252Fjavascript%2520sdk_type%252Fjavascript%2520lang%252Fko-KR%2520device%252FWin32%2520origin%252Fhttps%25253A%25252F%25252Fwww.epis.or.kr%26origin%3Dhttps%253A%252F%252Fwww.epis.or.kr%26response_type%3Dcode%26redirect_uri%3Dkakaojs%26state%3D6aux7i3zwmkp343atgnbgi%26through_account%3Dtrue%26client_id%3D950f3ae1f2f550e5ba7ff7d9fffc7781&talk_login=hidden">카카오 로그인</a>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모든 페이지가 사용하는 script 파일들 -->
+    <script src="js/side_navigation.js"></script>
+    <script src="js/11login.js"></script>
+    <script src="js/search_box.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

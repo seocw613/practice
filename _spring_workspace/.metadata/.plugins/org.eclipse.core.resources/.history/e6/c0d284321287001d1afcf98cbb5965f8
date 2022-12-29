@@ -1,0 +1,76 @@
+package com.ezen.myProject.service;
+
+import javax.inject.Inject;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.ezen.myProject.domain.UserVO;
+import com.ezen.myProject.repository.UserDAO;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service  // 서비스임을 알리는 어노테이션
+public class UserServiceImpl implements UserService {
+	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+	private int isOk;
+	
+	@Inject
+	private UserDAO userDao;
+	@Inject
+	BCryptPasswordEncoder passwordEncoder;
+
+	@Override
+	public boolean signUp(UserVO user) {
+		logger.info("signup check 2");
+		
+		// 아이디가 중복되면 회원가입 실패
+		// 아이디와 일치하는 정보를 db에서 가져오기
+		UserVO tmpUser = userDao.getUser(user.getId());
+		
+		// 아이디나 비밀번호 등의 글자수, 불가능한 형태 등 제한이 있다면 유효성 검사를 여기서 하면 된다.
+		// 아이디 유효성 검사
+		if(user.getId()==null || user.getId().length() == 0) {
+			return false;
+		}
+		
+		// 비밀번호 유효성 검사
+		if(user.getPw()==null || user.getPw().length() == 0) {
+			return false;
+		}
+		
+		// tmpUser가 null이 아니라면 이미 있는 아이디 -> 회원가입 불가
+		if(tmpUser != null) {
+			return false;
+		}
+		
+		// 위의 검사를 모두 통과 -> 회원가입 실행
+		String pw = user.getPw();
+		// BCryptPasswordEncoder객체.encode(비밀번호) : 비밀번호를 암호화 하는 함수
+		String encodePw = passwordEncoder.encode(pw);
+		// 암호화된 비밀번호로 변경
+		user.setPw(encodePw);
+		
+		// insert
+		isOk = userDao.insertUser(user);
+		
+		return isOk>0?true:false;
+	}
+
+	@Override
+	public UserVO getUser(String id, String pw) {
+		UserVO user = userDao.getUser(id);
+		// 입력된 아이디의 User가 없을 때 null 반환
+		if(user == null) return null;
+		// 가져온 User 객체의 비밀번호가 입력받은 비밀번호와 같은지 확인
+		// BCryptPasswordEncoder객체.matches(원래 비밀번호, 암호화된 비밀번호) : 두 비밀번호가 일치하는지 확인
+		if(passwordEncoder.matches(pw, user.getPw())) {
+			return user;
+		}else {
+			return null;
+		}
+	}
+
+}

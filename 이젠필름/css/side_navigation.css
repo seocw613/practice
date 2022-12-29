@@ -1,0 +1,130 @@
+:root{
+    --color1: #181313;
+    --color2: #391A1A;
+    --color3: #621313;
+    --white: #F2F2F2;
+}
+
+#side_navigation{
+    position: fixed;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 1;
+    width: 280px;
+    background: var(--color2);
+    padding-top: 100px;
+    height: 100vh;
+    transition: all 0.3s linear;
+}
+#side_navigation.active{
+    transform: translateX(0);
+}
+#side_navigation > div{
+    border-bottom: 1px solid rgba(242, 242, 242, 0.1);
+}
+#side_navigation > div > a{
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s linear;
+}
+#side_navigation > div > a:hover{
+    background: rgba(255, 255, 255, 0.1);
+}
+#side_navigation ion-icon{
+    font-size: 30px;
+}
+#side_navigation .category_title{
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+/* 장르 */
+#side_navigation > div.category{
+    transition: all 0.3s linear;
+}
+#side_navigation > div.category > div:hover{
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+}
+#side_navigation > div.category > div{
+    /* 아이콘과 장르 글씨가 있는 공간 */
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    transition: all 0.3s linear;
+}
+/* category toggle button */
+#side_navigation > div.category > div > .toggle_btn{
+    position: relative;
+    margin-left: 10px;
+}
+#side_navigation > div.category > div > .toggle_btn .line{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17px;
+    height: 3px;
+    border-radius: 20px;
+    background: var(--white);
+    transition: all 0.3s linear;
+}
+#side_navigation > div.category > div > .toggle_btn .line:nth-child(1){
+    transform: rotate(45deg);
+}
+#side_navigation > div.category > div > .toggle_btn .line:nth-child(2){
+    left: 11px;
+    transform: rotate(-45deg);
+}
+#side_navigation > div.category.active > div > .toggle_btn .line:nth-child(1){
+    transform: rotate(-45deg);
+}
+#side_navigation > div.category.active > div > .toggle_btn .line:nth-child(2){
+    transform: rotate(45deg);
+}
+#side_navigation div.category ul{
+    display: flex;
+    flex-direction: column;
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.3s linear;
+}
+#side_navigation div.category ul li{}
+#side_navigation div.category ul li a{
+    padding-left: 60px;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 40px;
+    transition: all 0.3s linear;
+}
+#side_navigation div.category ul li a:hover{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 카테고리 active */
+#side_navigation > div.category.active{
+    padding-bottom: 20px;
+}
+#side_navigation div.category.active ul{
+    height: 480px;
+}
+
+
+/* 위로 가는 버튼 */
+#to_top_btn{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 99;
+}
+#to_top_btn ion-icon{
+    font-size: 50px;
+    transition: all 0.3s linear;
+}
+#to_top_btn:hover ion-icon{
+    color: var(--color3);
+}

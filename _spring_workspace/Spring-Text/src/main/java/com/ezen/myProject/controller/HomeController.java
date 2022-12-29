@@ -1,0 +1,90 @@
+package com.ezen.myProject.controller;
+
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.ezen.myProject.domain.UserVO;
+import com.ezen.myProject.service.UserService;
+
+@RequestMapping("/member/*")
+@Controller
+public class HomeController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	@Inject
+	private UserService userService;
+	
+	@GetMapping("/")  // method가 get인 mapping을 사용하겠다.
+	public ModelAndView home(ModelAndView mv) {
+		mv.setViewName("/index");
+		return mv;
+	}
+	
+	@GetMapping("/signup")  // 회원가입 페이지로 보내는 메서드. method 속성이 get인 경우에 실행된다.
+	public ModelAndView signUpGet(ModelAndView mv) {
+		mv.setViewName("/user/signup");
+		return mv;
+	}
+	
+	@PostMapping("/signup")  // 실제 회원가입 메서드. method 속성이 post인 경우에 실행된다.
+	public ModelAndView signUpPost(ModelAndView mv, UserVO user) {
+		logger.info(user.toString());
+		// isUp == 등록이 잘 됐는지 확인할 변수
+		boolean isUp = userService.signUp(user);
+		if(isUp) {
+			mv.setViewName("/user/login");
+			mv.addObject("msg_signUp", "1");
+		}else {
+			mv.setViewName("/user/signup");
+			mv.addObject("msg_signUp", "0");
+		}
+		
+		return mv;
+	}
+	
+	@GetMapping("/login")  // 로그인 페이지로 보내는 메서드
+	public ModelAndView logInGet(ModelAndView mv) {
+		mv.setViewName("/user/login");
+		return mv;
+	}
+	
+	@PostMapping("/login")  // 로그인 실행 메서드
+	public ModelAndView loginPost(ModelAndView mv, String id, String pw, HttpServletRequest request) {
+		// 아이디와 비밀번호를 받아서 일치하는 회원이 있는지 확인
+		logger.info("id : "+id+"password : "+pw);
+		UserVO isUser = userService.getUser(id, pw);
+		
+		if(isUser != null) {  // 로그인 성공
+			HttpSession session = request.getSession();
+			session.setAttribute("ses", isUser);
+			mv.addObject("msg_logIn", "1");
+			mv.setViewName("/index");
+		}else {  // 로그인 실패
+			mv.addObject("msg_logIn", "0");
+			mv.setViewName("/user/login");
+		}
+		
+		return mv;
+	}
+	
+	@GetMapping("/logout")
+	public ModelAndView logOutGet(ModelAndView mv, HttpServletRequest request) {
+		request.getSession().removeAttribute("ses");
+		request.getSession().invalidate();
+		// 기존의 페이지로 이동
+		mv.addObject("msg_logOut", "1");
+		mv.setViewName("redirect:/");
+		return mv;
+	}
+	
+}

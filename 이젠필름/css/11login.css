@@ -1,0 +1,118 @@
+.loginmodal2 .login_container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.innercontainer{
+  height: 100%;
+  display: inline-block;
+}
+.containerTopRight{
+  width: 300px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.containerTopLeft{
+  display: flex;
+  align-items: center;
+  width: 720px;
+  height: 100%;
+  margin-right: 50px;
+}
+.bottom{
+  position: relative;
+  top: 30%;
+  text-align: center
+}
+.title{
+  font-size: 35px;
+}
+.mainPoster{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.videos1{
+  max-width: 100%;
+}
+.idpwfinandbox{
+  justify-content: center;
+  align-items: center;
+}
+
+.middlecontainer{
+
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.loginElement,.loginbutton{
+  width: 300px;
+  height: 50px;
+  border: 0px;
+  padding: 0px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  color:#181313;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.idpw{
+  font-size: 14px;
+  color:#f2f2f2;
+}
+.userRegister{
+  font-size: 17px;
+  color:#f2f2f2;
+}
+.textbox{
+  margin-bottom: 35px;
+  margin-top: 12px;
+}
+.idpwbox{
+  max-width: 350px;
+  margin: auto;
+}
+div>button{
+  cursor: pointer;
+}
+.logotextbox{
+  width: 107%;
+}
+.logoimgbox{
+  width: 58%;
+  height: 1%;
+}
+.loginmodal2{
+  display: none;
+  width: 1200px;
+  height: 700px;
+  position: fixed;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+.loginmodal2 #login_bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/로그인그림1.png);
+  background-size: cover;
+  opacity: 0.8;
+  z-index: 1;
+}
+.loginmodal2.active{
+  display: flex;
+}

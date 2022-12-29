@@ -1,0 +1,11 @@
+package com.ezen.myProject.domain;
+
+public class PagingVO {
+	private int pageNo;  // 현재 페이지네이션 번호
+	private int qty;  // 한 페이지당 게시글 수
+	
+	// 검색을 위한 변수
+	public PagingVO() {
+		this(1,10);
+	}
+}

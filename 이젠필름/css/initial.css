@@ -1,0 +1,32 @@
+@font-face { 
+    font-family: "LeferiBaseRegular";
+    src: url("../font/Leferi_TTF/LeferiBaseRegular.ttf") format("truetype");
+}
+@font-face { 
+    font-family: "LeferiBaseBold";
+    src: url("../font/Leferi_TTF/LeferiBaseBold.ttf") format("truetype");
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "LeferiBaseRegular";
+    color: var(--white);
+}
+:root{
+    --color1: #181313;
+    --color2: #391A1A;
+    --color3: #621313;
+    --white: #F2F2F2;
+}
+body{
+    position: relative;
+    background-color: var(--color1);
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}

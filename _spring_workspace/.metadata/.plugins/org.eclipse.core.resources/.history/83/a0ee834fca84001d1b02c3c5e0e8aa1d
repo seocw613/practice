@@ -1,0 +1,12 @@
+package com.ezen.myProject.repository;
+
+import com.ezen.myProject.domain.CommentVO;
+
+public class CommentDAO {
+
+	public int insertComment(CommentVO cvo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
